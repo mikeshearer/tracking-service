@@ -1,0 +1,17 @@
+name: jira-lint
+on: [pull_request_target]
+
+jobs:
+  jira-lint:
+    runs-on: self-hosted
+    steps:
+      - uses: cleartax/jira-lint@master
+        name: jira-lint
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          jira-token: ${{ secrets.JIRA_TOKEN }}
+          jira-base-url: https://ventureapp.atlassian.net
+          skip-branches: '^master$|^(dependabot|snyk).*'
+          skip-comments: true
+          pr-threshold: 1000

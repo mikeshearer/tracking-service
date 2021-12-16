@@ -1,0 +1,11 @@
+# Use this file to define individuals or teams that are responsible for code in a repository.
+# Read more: <https://help.github.com/articles/about-codeowners/>
+#
+# Order is important: the last matching pattern has the highest precedence
+
+# DevOps must review an changes to CircleCi and GitHub actions
+.circleci/*          @hqoapp/devops
+.github/*            @hqoapp/devops
+
+# DevOps must review all changes to CODEOWNERS
+.github/CODEOWNERS   @hqoapp/devops
